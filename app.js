@@ -16,7 +16,7 @@ const userRoutes = require("./routes/user");
 const PORT = process.env.PORT || 5000;
 console.log(process.env.DATABASE);
 mongoose
-  .connect(process.env.DATABASE, {
+  .connect(process.env.MONGODB_URI || process.env.DATABASE, {
     useNewUrlParser: true,
     useFindAndModify: true,
     useUnifiedTopology: true,
