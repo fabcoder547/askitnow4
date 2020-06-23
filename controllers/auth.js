@@ -9,9 +9,9 @@ exports.upload = multer({ storage: storage });
 
 exports.signup = (req, res) => {
   const errors = validationResult(req);
-  if (!errors.isEmpty()) {
-    return res.status(422).json({ error: "please fill all details correctly" });
-  }
+  // if (!errors.isEmpty()) {
+  //   return res.status(422).json({ error: "please fill all details correctly" });
+  // }
   User.findOne({ email: req.body.email }, (err, user) => {
     if (err) {
       return res.status(400).json({
